@@ -11,4 +11,4 @@ source {{pkg.svc_config_path}}/mongoimport-opts.conf
 # billmeyer/mongodb requirement to run mongoimport properly :
 ln -s $(hab pkg path core/glibc)/lib/ld-2.22.so /lib/ld-linux-x86-64.so.2 2>/dev/null
 
-${MONGODB_HOME}/bin/mongoimport --drop -d demo -c nationalparks --type json --jsonArray --file $(hab pkg path nathenharvey/national-parks)/national-parks.json ${MONGOIMPORT_OPTS}
+${MONGODB_HOME}/bin/mongoimport --drop -d demo -c nationalparks --type json --jsonArray --file $(hab pkg path {{pkg.origin}}/national-parks)/national-parks.json ${MONGOIMPORT_OPTS}
